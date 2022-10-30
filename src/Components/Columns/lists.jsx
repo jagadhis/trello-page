@@ -6,13 +6,17 @@ import {Add} from '@mui/icons-material';
 const lists = ({title}) => {
   return (
     <Box sx={{bgcolor:'grey'}}>
-        <Box sx={{display:'flex'}}>
+        <Box sx={{display:'flex', justifyContent: 'space-between',height:"40px"}}>
+            
             <Typography variant="h5">
                 {title}
             </Typography>
-            <Button type="Primary">
+           
+            
+            <Button variant="contained">
                     <Add />
             </Button>
+            
         </Box>
     </Box>
   )
