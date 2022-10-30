@@ -1,9 +1,8 @@
-import React , { useState } from 'react'
-import { Box , Typography , Button, Modal } from '@mui/material';
-import {Add} from '@mui/icons-material';
+import React from 'react'
+import { Box , Typography , Button } from '@mui/material';
 
+const Popup = () => {
 
-const Lists = ({title}) => {
   const style = {
     position: 'absolute',
     top: '50%',
@@ -15,22 +14,10 @@ const Lists = ({title}) => {
     boxShadow: 24,
     p: 4,
   };
-  const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+
   return (
-    <Box>
-        <Box sx={{display:'flex', justifyContent: 'space-between',height:"40px"}}>
-            
-            <Typography variant="h5">
-                {title}
-            </Typography>
-           
-            
-            <Button variant="contained" onClick={handleOpen}>
-                    <Add />
-            </Button>
-            <Modal
+    <div>
+       <Modal
         open={open}
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
@@ -45,10 +32,8 @@ const Lists = ({title}) => {
           </Typography>
         </Box>
       </Modal>
-            
-        </Box>
-    </Box>
+    </div>
   )
 }
 
-export default Lists
+export default Popup
