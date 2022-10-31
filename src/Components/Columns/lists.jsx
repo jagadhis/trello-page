@@ -1,4 +1,4 @@
-import React , { useState } from 'react'
+import React , { useState,useEffect } from 'react'
 import { Box , Typography , Button } from '@mui/material';
 import {Add} from '@mui/icons-material';
 import ModalForm from './modalForm';
@@ -60,6 +60,17 @@ const handleSubmit = (e) => {
     setSubmitted(true);
    
 };
+useEffect(() => {
+  window.localStorage.setItem('Data', JSON.stringify(CardData));
+}, [CardData]);
+
+useEffect(() => {
+  const data = window.localStorage.getItem('Data');
+  if(data !== null ) setCardData(JSON.parse(data));
+}, []);
+
+
+
 console.log(values);
 console.log(CardData);
   return (
