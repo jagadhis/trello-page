@@ -1,6 +1,6 @@
 import React from 'react'
 import { Box , Typography , Card,CardActions,CardContent } from '@mui/material';
-const EntityCard = (CardData) => {
+const EntityCard = ({CardData}) => {
   return (
     <Box sx={{ minWidth: 275 }}>
         { Object.values(CardData).map((values,index) => {
@@ -8,11 +8,11 @@ const EntityCard = (CardData) => {
             <Card variant="outlined" key={index}>
       <CardContent>
       <Typography sx={{ fontSize: 14 ,fontColor:"black" }} color="text.secondary" gutterBottom>
-       {values.title}
+       {values.description}
       </Typography>
     
       <Typography variant="body2">
-{values.description}
+{values.title}
       </Typography>
     </CardContent>
     <CardActions>
