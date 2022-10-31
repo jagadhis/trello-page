@@ -74,7 +74,10 @@ console.log(CardData);
             <Button variant="contained" onClick={handleOpen}>
                     <Add />
             </Button>
-            <ModalForm
+   
+            
+        </Box>
+        <ModalForm
         open={open}
         handleClose={handleClose}
         style={style}
@@ -87,8 +90,6 @@ console.log(CardData);
       >
       
       </ModalForm>
-            
-        </Box>
         <EntityCard CardData={CardData} />
     </Box>
   )
