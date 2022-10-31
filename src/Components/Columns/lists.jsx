@@ -48,12 +48,12 @@ const handleSubmit = (e) => {
         setValid(true);
     }
    
- setValues('');
- CardData.push({
-title:values.title,
-description:values.description,
- })
- setCardData(CardData);
+ 
+
+ setCardData([
+  {title:values.title,description:values.description},
+  ...CardData,
+ ]);
     
     
     setOpen(false);
