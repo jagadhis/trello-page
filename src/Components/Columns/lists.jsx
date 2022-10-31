@@ -47,19 +47,21 @@ const handleSubmit = (e) => {
     if(values.title && values.description ) {
         setValid(true);
     }
-    const checkEmptyInput = !Object.values(values).every(res=>res==="")
-    if(checkEmptyInput)
-    {
-     const newData = (values)=>([...values, values])
-     setCardData(newData);
-     const emptyInput= {title:'',description:''}
-     setValues(emptyInput)
-    }
+   
+ setValues('');
+ CardData.push({
+title:values.title,
+description:values.description,
+ })
+ setCardData(CardData);
+    
+    
     setOpen(false);
     setSubmitted(true);
    
 };
 console.log(values);
+console.log(CardData);
   return (
     <Box>
         <Box sx={{display:'flex', justifyContent: 'space-between',height:"40px"}}>
