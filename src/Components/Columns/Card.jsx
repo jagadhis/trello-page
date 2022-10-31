@@ -7,11 +7,11 @@ const EntityCard = ({CardData}) => {
           return(
             <Card variant="outlined" key={index}>
       <CardContent>
-      <Typography sx={{ fontSize: 14 ,fontColor:"black" }} color="text.secondary" gutterBottom>
+      <Typography sx={{ fontSize: 24 ,fontColor:"black" }} color="text.secondary" gutterBottom>
        {values.description}
       </Typography>
     
-      <Typography variant="body2">
+      <Typography variant="h6">
 {values.title}
       </Typography>
     </CardContent>
