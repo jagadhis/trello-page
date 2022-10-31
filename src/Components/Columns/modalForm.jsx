@@ -1,40 +1,22 @@
 
 import React ,{useState} from 'react'
+import { Box ,  Modal } from '@mui/material';
 import "./modalForm.css";
 
-const ModalForm = () => {
-    const [values, setValues] = useState({
-       title:'',
-       description:'',
-    });
+const ModalForm = ({open,handleClose,style,values,handleSubmit,handletitleInputChange,handledescriptionInputChange}) => {
+ 
     const [submitted, setSubmitted] = useState(false);
-    const [valid, setValid] = useState(false);
-    const handletitleInputChange = (event) => {
-        event.persist();
-        setValues((values) => ({
-            ...values,
-            title: event.target.value,
-            
-        }));
-    };
-    const handledescriptionInputChange = (event) => {
-        event.persist();
-        setValues((values) => ({
-            ...values,
-            description:event.target.value,
-        }));
-    };
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        if(values.title && values.description ) {
-            setValid(true);
-        }
-        setSubmitted(true);
-       
-    };
-    console.log(values);
+   
+
   return (
     <div> 
+              <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
         <form class='register-form' onSubmit={handleSubmit}>
         <input
     id="title"
@@ -60,6 +42,9 @@ const ModalForm = () => {
 
 <button type='submit'>Submit </button>
 </form>
+        </Box>
+      </Modal>
+
 
 
     </div>

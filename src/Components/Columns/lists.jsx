@@ -1,7 +1,8 @@
 import React , { useState } from 'react'
-import { Box , Typography , Button, Modal } from '@mui/material';
+import { Box , Typography , Button } from '@mui/material';
 import {Add} from '@mui/icons-material';
 import ModalForm from './modalForm';
+import EntityCard from './Card';
 
 
 const Lists = ({title}) => {
@@ -16,9 +17,49 @@ const Lists = ({title}) => {
     boxShadow: 24,
     p: 4,
   };
+  const [CardData,setCardData] = useState([])
+  const [values, setValues] = useState({
+    title:'',
+    description:'',
+ });
   const [open, setOpen] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [valid, setValid] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const handletitleInputChange = (event) => {
+    event.persist();
+    setValues((values) => ({
+        ...values,
+        title: event.target.value,
+        
+    }));
+};
+const handledescriptionInputChange = (event) => {
+    event.persist();
+    setValues((values) => ({
+        ...values,
+        description:event.target.value,
+    }));
+};
+const handleSubmit = (e) => {
+    e.preventDefault();
+    if(values.title && values.description ) {
+        setValid(true);
+    }
+    const checkEmptyInput = !Object.values(values).every(res=>res==="")
+    if(checkEmptyInput)
+    {
+     const newData = (values)=>([...values, values])
+     setCardData(newData);
+     const emptyInput= {title:'',description:''}
+     setValues(emptyInput)
+    }
+    setOpen(false);
+    setSubmitted(true);
+   
+};
+console.log(values);
   return (
     <Box>
         <Box sx={{display:'flex', justifyContent: 'space-between',height:"40px"}}>
@@ -31,18 +72,22 @@ const Lists = ({title}) => {
             <Button variant="contained" onClick={handleOpen}>
                     <Add />
             </Button>
-            <Modal
+            <ModalForm
         open={open}
-        onClose={handleClose}
+        handleClose={handleClose}
+        style={style}
+        handleSubmit={handleSubmit}
+        values={values}
+        handletitleInputChange={handletitleInputChange}
+        handledescriptionInputChange={handledescriptionInputChange}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={style}>
-       <ModalForm title="hello" description="Developer" />
-        </Box>
-      </Modal>
+      
+      </ModalForm>
             
         </Box>
+        <EntityCard CardData={CardData} />
     </Box>
   )
 }
