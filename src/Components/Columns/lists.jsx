@@ -24,7 +24,7 @@ const Lists = ({title}) => {
   const [values, setValues] = useState(initialValue)
   const [open, setOpen] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-  const [valid, setValid] = useState(false);
+  const [valid,setValid] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const handletitleInputChange = (event) => {
@@ -94,10 +94,11 @@ console.log(CardData);
         style={style}
         handleSubmit={handleSubmit}
         values={values}
+        submitted={submitted}
+        valid={valid}
         handletitleInputChange={handletitleInputChange}
         handledescriptionInputChange={handledescriptionInputChange}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
+      
       >
       
       </ModalForm>

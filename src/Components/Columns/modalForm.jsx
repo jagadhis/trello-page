@@ -1,11 +1,11 @@
 
-import React ,{useState} from 'react'
+import React from 'react'
 import { Box ,  Modal } from '@mui/material';
 import "./modalForm.css";
 
-const ModalForm = ({open,handleClose,style,values,handleSubmit,handletitleInputChange,handledescriptionInputChange}) => {
+const ModalForm = ({open,handleClose,style,values,handleSubmit,handletitleInputChange,handledescriptionInputChange,submitted,valid}) => {
  
-    const [submitted, setSubmitted] = useState(false);
+    
    
 
   return (
