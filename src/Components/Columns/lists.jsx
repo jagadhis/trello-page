@@ -17,11 +17,11 @@ const Lists = ({title}) => {
     boxShadow: 24,
     p: 4,
   };
+  const initialValue=[{
+    title:'',description:'',
+  }]
   const [CardData,setCardData] = useState([])
-  const [values, setValues] = useState({
-    title:'',
-    description:'',
- });
+  const [values, setValues] = useState(initialValue)
   const [open, setOpen] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [valid, setValid] = useState(false);

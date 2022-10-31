@@ -3,16 +3,16 @@ import { Box , Typography , Card,CardActions,CardContent } from '@mui/material';
 const EntityCard = (CardData) => {
   return (
     <Box sx={{ minWidth: 275 }}>
-        { Object.values(CardData).map((CardData,index) => {
+        { Object.values(CardData).map((values,index) => {
           return(
             <Card variant="outlined" key={index}>
       <CardContent>
       <Typography sx={{ fontSize: 14 ,fontColor:"black" }} color="text.secondary" gutterBottom>
-       {CardData.title}
+       {values.title}
       </Typography>
     
       <Typography variant="body2">
-{CardData.description}
+{values.description}
       </Typography>
     </CardContent>
     <CardActions>
