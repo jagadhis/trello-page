@@ -17,10 +17,13 @@ const Lists = ({title}) => {
     boxShadow: 24,
     p: 4,
   };
+  const KEY = "Data";
   const initialValue=[{
     title:'',description:'',
   }]
-  const [CardData,setCardData] = useState([])
+  const [CardData,setCardData] = useState(()=>{
+    return JSON.parse(window.localStorage.getItem(KEY) || [])
+  })
   const [values, setValues] = useState(initialValue)
   const [open, setOpen] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -60,14 +63,11 @@ const handleSubmit = (e) => {
     setSubmitted(true);
    
 };
-useEffect(() => {
-  window.localStorage.setItem('Data', JSON.stringify(CardData));
-}, [CardData]);
+
 
 useEffect(() => {
-  const data = window.localStorage.getItem('Data');
-  if(data !== null ) setCardData(JSON.parse(data));
-}, []);
+  window.localStorage.setItem(KEY, JSON.stringify(CardData));
+}, [CardData]);
 
 
 
