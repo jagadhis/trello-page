@@ -22,7 +22,7 @@ const Lists = ({title}) => {
     title:'',description:'',
   }]
   const [CardData,setCardData] = useState(()=>{
-    return JSON.parse(window.localStorage.getItem(KEY) || [])
+  return JSON.parse(window.localStorage.getItem(KEY) || "[]")
   })
   const [values, setValues] = useState(initialValue)
   const [open, setOpen] = useState(false);
