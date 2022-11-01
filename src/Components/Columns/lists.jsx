@@ -102,7 +102,9 @@ console.log(CardData);
       >
       
       </ModalForm>
-        <EntityCard CardData={CardData} />
+      <Box onClick={handleOpen}>
+        <EntityCard CardData={CardData}  />
+        </Box>
     </Box>
   )
 }
