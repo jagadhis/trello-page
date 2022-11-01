@@ -3,7 +3,6 @@ import { Box , Typography , Button } from '@mui/material';
 import {Add} from '@mui/icons-material';
 import ModalForm from './modalForm';
 import EntityCard from './Card';
-import { v4 as uuid } from 'uuid';
 
 
 const Lists = ({title}) => {
@@ -20,7 +19,7 @@ const Lists = ({title}) => {
   };
   const KEY = "Data";
   const initialValue=[{
-    id:uuid(),title:'',description:'',
+    title:'',description:'',
   }]
   const [CardData,setCardData] = useState(()=>{
     return JSON.parse(window.localStorage.getItem(KEY) || [])
@@ -55,7 +54,7 @@ const handleSubmit = (e) => {
  
 
  setCardData([
-  {id:uuid(),title:values.title,description:values.description},
+  {title:values.title,description:values.description},
   ...CardData,
  ]);
     
