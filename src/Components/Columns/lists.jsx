@@ -21,8 +21,13 @@ const Lists = ({title}) => {
   const initialValue=[{
     title:'',description:'',
   }]
+  const data = JSON.parse(window.sessionStorage?.getItem(KEY))
   const [CardData,setCardData] = useState(()=>{
-  return JSON.parse(window.sessionStorage?.getItem(KEY) || [])
+   if(!Array.isArray(data)){
+    return []
+  }else{
+    return data;
+  }
   
   })
 
