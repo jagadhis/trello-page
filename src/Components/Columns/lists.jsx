@@ -75,6 +75,13 @@ const handleSubmit = (e) => {
     setSubmitted(true);
    
 };
+const handleUpdate = () =>{
+  var existing  = window.sessionStorage.getItem(KEY);
+  existing = existing?existing.split(','):[];
+  existing.push('data')
+  window.sessionStorage.setItem(KEY,JSON.stringify(CardData));
+}
+
 
 
 useEffect(() => {
@@ -113,8 +120,8 @@ console.log(CardData);
       >
       
       </ModalForm>
-      <Box onClick={handleOpen}>
-        <EntityCard CardData={CardData}  />
+      <Box onClick={handleOpen} >
+        <EntityCard CardData={CardData} handleUpdate={handleUpdate} />
         </Box>
     </Box>
   )
