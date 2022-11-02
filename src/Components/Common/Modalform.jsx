@@ -1,7 +1,7 @@
 
 import React from 'react'
 import { Box ,  Modal } from '@mui/material';
-import "./modalForm.css";
+import "./Modalform.css";
 
 const ModalForm = ({open,handleClose,style,values,handleSubmit,handletitleInputChange,handledescriptionInputChange,submitted,valid}) => {
  

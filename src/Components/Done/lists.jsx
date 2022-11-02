@@ -1,12 +1,12 @@
 import React , { useState,useEffect } from 'react'
 import { Box , Typography , Button } from '@mui/material';
 import {Add} from '@mui/icons-material';
-import ModalForm from './modalForm';
-import EntityCard from './Card';
+import ModalForm from '../Common/Modalform';
+import EntityCard from '../Common/Card';
 import { v4 as uuidv4 } from 'uuid';
 
 
-const Lists = ({title}) => {
+const DoneList = ({title}) => {
   const style = {
     position: 'absolute',
     top: '50%',
@@ -19,7 +19,7 @@ const Lists = ({title}) => {
     p: 4,
   };
 
-  const KEY = "Data";
+  const KEY = "Done";
   const initialValue=[{
     id:uuidv4(),title:'',description:'',
   }]
@@ -127,4 +127,4 @@ console.log(CardData);
   )
 }
 
-export default Lists
+export default DoneList

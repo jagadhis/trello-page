@@ -6,7 +6,7 @@ import EntityCard from '../Common/Card';
 import { v4 as uuidv4 } from 'uuid';
 
 
-const TodoList = ({title}) => {
+const ProgressList = ({title}) => {
   const style = {
     position: 'absolute',
     top: '50%',
@@ -19,7 +19,7 @@ const TodoList = ({title}) => {
     p: 4,
   };
 
-  const KEY = "ToDo";
+  const KEY = "InProgress";
   const initialValue=[{
     id:uuidv4(),title:'',description:'',
   }]
@@ -127,4 +127,4 @@ console.log(CardData);
   )
 }
 
-export default TodoList
+export default ProgressList
