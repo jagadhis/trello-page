@@ -13,7 +13,7 @@ const Grids = () => {
                 <TodoList title="To do"/>
             </Grid>
             <Grid item xs={12} md={8} lg={4}>
-                <ProgressList title="in Progress"/>
+                <ProgressList title="In Progress"/>
             </Grid>
             <Grid item xs={12} md={8} lg={4}>
                 <DoneList title="Done"/>
